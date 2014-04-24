@@ -13,7 +13,7 @@
   <%= render :partial => @post.comments %>
 </div>
 
-<%= form_for [@post, Comment.new], :class => "new_comment" do |f| %>
+<%= form_for [@post, Comment.new], :remote => true, :class => "new_comment" do |f| %>
     <p>
       <%= f.label :body, 'New Comment' %>
       <%= f.text_area :body %>

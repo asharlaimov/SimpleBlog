@@ -1,0 +1,4 @@
+var comments = $('#comments');
+comments.append("<%= escape_javascript render(@comment) %>");
+$("#comment_body").val('');
+$("#comment_<%=@comment.id%>").effect("highlight", { color: "#04B45F" }, 3000);
