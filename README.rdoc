@@ -28,3 +28,5 @@ Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 
 1. rails new SimpleBlog
+2. ruby script/generate scaffold Post title:string body:text
+3. rake db:migrate
