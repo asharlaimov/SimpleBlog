@@ -7,3 +7,18 @@
   <%= link_to 'Destroy', @post, method: :delete, data: {confirm: 'Are you sure?'} %>
   <%= link_to 'See All Posts', posts_path %>
 </p>
+
+<h2>Comments</h2>
+<div id="comments">
+  <%= render :partial => @post.comments %>
+</div>
+
+<%= form_for [@post, Comment.new], :class => "new_comment" do |f| %>
+    <p>
+      <%= f.label :body, 'New Comment' %>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit 'Add Comment' %>
+    </p>
+<% end %>
