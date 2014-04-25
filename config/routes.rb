@@ -1,5 +1,7 @@
 SimpleBlog::Application.routes.draw do
 
+  resources :tags
+
   get 'admin' => 'admin#index'
   controller :sessions do
     get 'login' => :new
