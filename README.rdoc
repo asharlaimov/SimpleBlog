@@ -34,3 +34,5 @@ Please feel free to use a different markup language if you do not plan to run
 5. rake db:migrate
 6. rake db:seed
 7. rails generate scaffold User name:string password:digest admin:boolean
+8. rails generate controller Sessions new create destroy
+9. rails generate controller Admin index
