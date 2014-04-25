@@ -27,13 +27,15 @@ Things you may want to cover:
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 
+rake db:migrate
+rake db:seed
+
 1. rails new SimpleBlog
 2. ruby script/generate scaffold Post title:string body:text
-3. rake db:migrate
-4. ruby script/generate scaffold Comment body:text post:belongs_to
-5. rake db:migrate
-6. rake db:seed
-7. rails generate scaffold User name:string password:digest admin:boolean
-8. rails generate controller Sessions new create destroy
-9. rails generate controller Admin index
-10. rails generate scaffold Tag title:string
+3. ruby script/generate scaffold Comment body:text post:belongs_to
+4. rails generate scaffold User name:string password:digest admin:boolean
+5. rails generate controller Sessions new create destroy
+6. rails generate controller Admin index
+7. rails generate scaffold Tag title:string
+8. rails generate scaffold Tag title:string
+9. rails generate scaffold PostTag post:belongs_to tag:belongs_to

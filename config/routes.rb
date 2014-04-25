@@ -1,5 +1,7 @@
 SimpleBlog::Application.routes.draw do
 
+  resources :post_tags
+
   resources :tags
 
   get 'admin' => 'admin#index'
