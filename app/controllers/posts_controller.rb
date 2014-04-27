@@ -26,6 +26,11 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    tags = params[:post][:tags].split(',')
+    tags.each do |t|
+      tag = Tag.find_or_initialize_by(:title => t)
+      @post.tags << tag
+    end
 
     respond_to do |format|
       if @post.save

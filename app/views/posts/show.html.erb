@@ -17,6 +17,9 @@
     <p>
       <%= f.label :body, 'New Comment' %>
       <%= f.text_area :body %>
+      <% @post.tags.each do |t| %>
+          <%= content_tag :label, t.title %>
+      <% end %>
     </p>
     <p>
       <%= f.submit 'Add Comment' %>

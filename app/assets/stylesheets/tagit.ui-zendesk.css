@@ -1,0 +1,126 @@
+ul.tagit {
+    background: inherit;
+    border-color: #C6C6C6;
+    border-style: solid;
+    border-width: 1px;
+}
+
+ul.tagit li.tagit-choice {
+    background: none repeat scroll 0 0 #DEE7F8;
+    border: 1px solid #CAD8F3;
+    border-radius: 6px;
+    font-weight: normal;
+}
+
+ul.tagit li.tagit-choice .tagit-label:not(a) {
+    color: #555555;
+}
+
+ul.tagit li.tagit-choice a.tagit-close {
+    text-decoration: none;
+}
+
+ul.tagit li.tagit-choice .tagit-close {
+    right: 0.4em;
+}
+
+ul.tagit li.tagit-choice .ui-icon {
+    display: none;
+}
+
+ul.tagit li.tagit-choice .tagit-close .text-icon {
+    color: #777777;
+    display: inline;
+    font-family: arial, sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+ul.tagit li.tagit-choice:hover, ul.tagit li.tagit-choice.remove {
+    background-color: #BBCEF1;
+    border-color: #6D95E0;
+}
+
+ul.tagit li.tagit-choice a.tagLabel:hover, ul.tagit li.tagit-choice a.tagit-close .text-icon:hover {
+    color: #222222;
+}
+
+ul.tagit input[type="text"] {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #333333;
+}
+
+.ui-widget {
+    font-size: 1.1em;
+}
+
+.tagit-autocomplete.ui-autocomplete {
+    cursor: default;
+    position: absolute;
+}
+
+* html .tagit-autocomplete.ui-autocomplete {
+    width: 1px;
+}
+
+.tagit-autocomplete.ui-menu {
+    display: block;
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    padding: 2px;
+}
+
+.tagit-autocomplete.ui-menu .ui-menu {
+    margin-top: -3px;
+}
+
+.tagit-autocomplete.ui-menu .ui-menu-item {
+    clear: left;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.tagit-autocomplete.ui-menu .ui-menu-item a {
+    display: block;
+    line-height: 1.5;
+    padding: 0.2em 0.4em;
+    text-decoration: none;
+}
+
+.tagit-autocomplete .ui-menu .ui-menu-item a.ui-state-hover, .tagit-autocomplete .ui-menu .ui-menu-item a.ui-state-active {
+    font-weight: normal;
+    margin: -1px;
+}
+
+.tagit-autocomplete.ui-widget-content {
+    background: none repeat-x scroll 50% 50% #FFFFFF;
+    border: 1px solid #AAAAAA;
+    color: #222222;
+}
+
+.tagit-autocomplete.ui-corner-all, .tagit-autocomplete .ui-corner-all {
+    border-radius: 4px;
+}
+
+.tagit-autocomplete .ui-state-hover, .tagit-autocomplete .ui-state-focus {
+    background: none repeat scroll 0 0 #DADADA;
+    border: 1px solid #999999;
+    color: #212121;
+    font-weight: normal;
+}
+
+.tagit-autocomplete .ui-state-active {
+    border: 1px solid #AAAAAA;
+}
+
+.tagit-autocomplete .ui-widget-content {
+    border: 1px solid #AAAAAA;
+}
+
+.tagit .ui-helper-hidden-accessible {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}

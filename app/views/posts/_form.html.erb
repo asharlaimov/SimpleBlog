@@ -21,6 +21,17 @@
       <br>
       <%= f.text_area :body %>
     </div>
+    <div class="field">
+      <%= f.label :tags %>
+      <br>
+
+      <%= content_tag :ul, [@post.tags, @post.tags.new], :id => "tagit_tags", data: {tags: Tag.tag_list} do %>
+
+      <% end %>
+
+      <%= f.hidden_field :tags, :value => @post.tags.map(&:title).join(',') %>
+
+    </div>
     <div class="actions">
       <%= f.submit %>
     </div>

@@ -20,6 +20,7 @@ SimpleBlog::Application.routes.draw do
 
   resources :posts do
     resources :comments
+    resource :tags
   end
 
   root 'posts#index'
