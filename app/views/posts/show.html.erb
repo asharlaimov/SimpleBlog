@@ -8,6 +8,9 @@
   <%= link_to 'See All Posts', posts_path %>
 </p>
 
+<h2>Tags</h2>
+<%= render :partial => @post.tags %>
+
 <h2>Comments</h2>
 <div id="comments">
   <%= render :partial => @post.comments %>
@@ -17,9 +20,6 @@
     <p>
       <%= f.label :body, 'New Comment' %>
       <%= f.text_area :body %>
-      <% @post.tags.each do |t| %>
-          <%= content_tag :label, t.title %>
-      <% end %>
     </p>
     <p>
       <%= f.submit 'Add Comment' %>

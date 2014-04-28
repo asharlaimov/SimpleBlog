@@ -1,9 +1,5 @@
-<%= form_for [@tag, Tag.new], :remote => true, :class => "new_comment" do |f| %>
+<%= form_for [@tag, Tag.new] do |f| %>
     <p>
-      <%= f.label :body, 'New Comment' %>
-      <%= f.text_area :body %>
-    </p>
-    <p>
-      <%= f.submit 'Add Comment' %>
+      <%= simple_format h(tag.title) %>
     </p>
 <% end %>
