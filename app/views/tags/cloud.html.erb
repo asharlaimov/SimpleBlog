@@ -2,6 +2,6 @@
 
 <div id="tag_cloud">
   <% Tag.order(:title).each do |tag| %>
-      <%= content_tag :a, tag.title, href: tag_path(tag), rel: tag.post_tags.count %>
+      <%= content_tag :a, tag.title, href: posts_path(tag: tag.id), rel: tag.post_tags.count %>
   <% end %>
 </div>
