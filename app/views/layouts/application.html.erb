@@ -8,15 +8,32 @@
 </head>
 <body>
 
-<% if session[:user_id] %>
-    <%= button_to 'Logout', logout_path, method: :delete %>
-<% else %>
-    <%= button_to 'Login', login_path, method: :get %>
-    <%= button_to 'Register', register_path, method: :get %>
-<% end %>
+<div id="banner">
+  <%= @page_title || "Simple Blog" %>
+</div>
 
-<div id="main">
-  <%= yield %>
+<div id="columns">
+
+  <div id="side">
+    <ul>
+      <li><%= link_to 'Posts', posts_path %></li>
+    </ul>
+    <% if session[:user_id] %>
+        <%= button_to 'Logout', logout_path, method: :delete %>
+    <% else %>
+        <%= button_to 'Login', login_path, method: :get %>
+        <%= button_to 'Register', register_path, method: :get %>
+    <% end %>
+  </div>
+
+  <div id="main">
+    <%= yield %>
+  </div>
+
+</div>
+
+<div id="footer">
+  <%= render template: 'tags/cloud' %>
 </div>
 
 </body>

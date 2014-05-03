@@ -1,0 +1,7 @@
+<h3>Tags: </h3>
+
+<div id="tag_cloud">
+  <% Tag.order(:title).each do |tag| %>
+      <%= content_tag :a, tag.title, href: tag_path(tag), rel: tag.post_tags.count %>
+  <% end %>
+</div>

@@ -17,3 +17,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on("ready page:change", function () {
+    $('#tag_cloud a').tagcloud();
+});

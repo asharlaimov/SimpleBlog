@@ -93,6 +93,19 @@
   }
 }
 
+#footer {
+  position: absolute;
+  height: 4em;
+  width: 100%;
+  bottom: 0;
+  background-color: #99CC99;
+  display: inline-block;
+
+  #tag_cloud, h3 {
+    display: inline-block;
+  }
+}
+
 .simple_post_form {
   fieldset {
     background: #efe;
