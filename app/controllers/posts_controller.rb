@@ -26,6 +26,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user = User.find(session[:user_id])
     tags = params[:post][:tags].split(',').uniq
     @post.init_tags(tags)
 
