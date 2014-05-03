@@ -4,7 +4,10 @@ class Post < ActiveRecord::Base
   has_many :tags, -> { distinct }, through: :post_tags
   validates :title, :body, presence: true
 
-  def self.tag_list
-    tags.map(&:title)
+  def init_tags(tags_list)
+    self.tags = []
+    tags_list.each do |t|
+      self.tags << Tag.find_or_initialize_by(:title => t)
+    end
   end
 end

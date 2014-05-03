@@ -27,9 +27,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     tags = params[:post][:tags].split(',').uniq
-    tags.each do |t|
-      @post.tags << Tag.find_or_initialize_by(:title => t)
-    end
+    @post.init_tags(tags)
 
     respond_to do |format|
       if @post.save
@@ -45,11 +43,8 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-
     tags = params[:post][:tags].split(',').uniq
-    tags.each do |t|
-      @post.tags << Tag.find_or_initialize_by(:title => t) unless @post.tags.any? { |item| t == item.title }
-    end
+    @post.init_tags(tags)
 
     respond_to do |format|
       if @post.update(post_params)

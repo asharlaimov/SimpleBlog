@@ -25,7 +25,7 @@
       <%= f.label :tags %>
       <br>
 
-      <%= content_tag :ul, [@post.tags, @post.tags.new], :id => "tagit_tags", data: {tags: Tag.tag_list} do %>
+      <%= content_tag :ul, [@post.tags, @post.tags.new], :id => "tagit_tags", data: {tags: Tag.tags_title_list} do %>
 
       <% end %>
 

@@ -11,6 +11,7 @@ Post.delete_all
 Comment.delete_all
 User.delete_all
 Tag.delete_all
+PostTag.delete_all
 
 post1 = Post.create!(title: 'Post 1', body: 'Desc Post 1')
 post2 = Post.create!(title: 'Post 2', body: 'Desc Post 2')
