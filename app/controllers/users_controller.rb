@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_admin_rights
+  before_action :require_admin_rights, except: [:new, :create]
+  skip_before_action :authorize, only: [:new, :create]
 
   # GET /users
   # GET /users.json
@@ -29,7 +30,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_url, notice: "User #{@user.name} was successfully created." }
+        session[:user_id] = @user.id
+        format.html { redirect_to admin_rights ? users_url : posts_url, notice: "User #{@user.name} was successfully created." }
         format.json { render action: 'show', status: :created, location: @user }
       else
         format.html { render action: 'new' }

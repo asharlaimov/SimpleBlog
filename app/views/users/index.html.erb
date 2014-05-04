@@ -5,6 +5,8 @@
   <thead>
   <tr>
     <th>Name</th>
+    <th>Admin</th>
+    <th>Banned</th>
     <th>Action</th>
   </tr>
   </thead>
@@ -13,6 +15,8 @@
   <% @users.each do |user| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
         <td><%= user.name %></td>
+        <td><%= user.admin %></td>
+        <td><%= user.banned %></td>
         <td class="actions">
           <%= link_to 'Show', user %>
           <%= link_to 'Edit', edit_user_path(user) %>
@@ -24,5 +28,3 @@
 </table>
 
 <p><%= paginate @users %></p>
-
-<%= link_to 'New User', new_user_path %>

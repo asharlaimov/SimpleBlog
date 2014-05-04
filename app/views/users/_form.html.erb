@@ -17,17 +17,30 @@
           <%= f.label :name, 'Name:' %>
           <%= f.text_field :name, size: 40 %>
         </div>
-        <div class="field">
-          <%= f.label :password, 'Password' %>:
-          <%= f.password_field :password, size: 40 %>
-        </div>
-        <div class="field">
-          <%= f.label :password_confirmation, 'Confirm' %>:
-          <%= f.password_field :password_confirmation, size: 40 %>
-        </div>
+        <% if admin_rights %>
+            <div class="field">
+              <%= f.label :admin, 'admin:' %>
+              <%= f.check_box :admin %>
+            </div>
+            <div class="field">
+              <%= f.label :banned, 'banned:' %>
+              <%= f.check_box :banned %>
+            </div>
+        <% else %>
+            <div class="field">
+              <%= f.label :password, 'Password' %>:
+              <%= f.password_field :password, size: 40 %>
+            </div>
+            <div class="field">
+              <%= f.label :password_confirmation, 'Confirm' %>:
+              <%= f.password_field :password_confirmation, size: 40 %>
+            </div>
+        <% end %>
+
         <div class="actions">
           <%= f.submit %>
         </div>
+
       </fieldset>
   <% end %>
 </div>
