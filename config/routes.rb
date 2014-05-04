@@ -14,7 +14,10 @@ SimpleBlog::Application.routes.draw do
   get "admin/index"
 
   resources :users
-  get 'register' => 'users#register'
+
+  get 'settings' => 'settings#index'
+  post 'settings' => 'settings#edit'
+  post 'approve_post' => 'approve#post'
 
   resources :comments
 

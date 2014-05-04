@@ -1,0 +1,6 @@
+<%= form_tag do %>
+    <%= label :require_approval, 'require approval:' %>
+    <%= check_box_tag :require_approval, 1, @require_approval %>
+
+    <%= submit_tag "Update" %>
+<% end %>.

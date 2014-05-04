@@ -28,5 +28,9 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def self.filter_approved(value = true)
+    where(:approved => value)
+  end
+
   default_scope order('posts.created_at DESC')
 end

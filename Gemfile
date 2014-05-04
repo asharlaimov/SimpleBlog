@@ -52,3 +52,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Useful gem to manage paginated collections
 gem 'kaminari'
+
+# Settings Gem
+gem "rails-settings-cached", "0.3.1"

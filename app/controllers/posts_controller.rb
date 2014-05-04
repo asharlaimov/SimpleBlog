@@ -5,7 +5,10 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.filter_by_tag(params[:tag]).filter_my_posts(params[:my_posts], session[:user_id]).page(params[:page]).per(5)
+    @posts = Post.filter_by_tag(params[:tag])
+    .filter_my_posts(params[:my_posts], session[:user_id])
+    .filter_approved(params[:moderate].blank?)
+    .page(params[:page]).per(5)
   end
 
   # GET /posts/1
@@ -27,6 +30,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = User.find(session[:user_id])
+    @post.approved = !Settings.require_approval
     tags = params[:post][:tags].split(',').uniq
     @post.init_tags(tags)
 
