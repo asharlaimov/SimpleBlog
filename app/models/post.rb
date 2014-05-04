@@ -20,5 +20,13 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def self.filter_my_posts(my = false, user_id)
+    if my.present? && my
+      where(:user_id => user_id)
+    else
+      all
+    end
+  end
+
   default_scope order('posts.created_at DESC')
 end

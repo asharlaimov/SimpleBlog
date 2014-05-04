@@ -19,6 +19,7 @@
       <li><%= link_to 'Posts', posts_path %></li>
     </ul>
     <% if session[:user_id] %>
+        <%= link_to 'My Posts', posts_path(my_posts: true) %>
         <%= button_to 'Logout', logout_path, method: :delete %>
     <% else %>
         <%= button_to 'Login', login_path, method: :get %>

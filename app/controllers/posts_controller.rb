@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.filter_by_tag(params[:tag]).page(params[:page])
+    @posts = Post.filter_by_tag(params[:tag]).filter_my_posts(params[:my_posts], session[:user_id]).page(params[:page]).per(5)
   end
 
   # GET /posts/1
