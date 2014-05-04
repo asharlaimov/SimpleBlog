@@ -16,10 +16,12 @@ PostTag.delete_all
 admin = User.create(name: 'admin', password: 'admin', password_confirmation: 'admin', admin: true)
 user1 = User.create(name: 'user1', password: 'user1', password_confirmation: 'user1')
 user2 = User.create(name: 'user2', password: 'user2', password_confirmation: 'user2')
+user3 = User.create(name: 'user3', password: 'user3', password_confirmation: 'user3', banned: true)
 
 post1 = Post.create!(title: 'Post 1', body: 'Desc Post 1', user: admin)
 post2 = Post.create!(title: 'Post 2', body: 'Desc Post 2', user: user1)
 post3 = Post.create!(title: 'Post 3', body: 'Desc Post 3', user: user2)
+post4 = Post.create!(title: 'Post 4', body: 'Desc Post 4', user: user3)
 
 comment1 = Comment.create!(body: 'Comment 1', post: post1)
 comment2 = Comment.create!(body: 'Comment 2', post: post2)

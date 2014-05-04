@@ -41,5 +41,6 @@ rake db:seed
 9. rails generate scaffold PostTag post:belongs_to tag:belongs_to
 10. rails generate migration AddPostsCounterCacheToTags
 11. rails generate migration AddOwnerToPost
+11. rails generate migration AddBannedUserFiels
 
 select  post_tags.id, posts.title, tags.title from post_tags LEFT JOIN posts on post_tags.post_id == posts.id LEFT JOIN tags on post_tags.tag_id == tags.id order by posts.title

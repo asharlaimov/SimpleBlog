@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   private
   def ensure_an_admin_remains
-    if User.count.zero?
+    if User.where(:admin => true).count.zero?
       raise "The last Admin can not de deleted"
     end
   end

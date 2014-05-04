@@ -5,22 +5,32 @@ class ApplicationController < ActionController::Base
 
   before_action :authorize
 
+  helper_method :admin_rights, :authorized
+
   protected
 
   def authorize
-    unless User.find_by(id: session[:user_id])
+    unless authorized
       redirect_lo_login
     end
+  end
+
+  def authorized
+    !User.find_by(id: session[:user_id]).blank?
   end
 
   def admin_rights
     user = User.find_by(id: session[:user_id])
-    unless user && user.admin
-      redirect_lo_login
+    user && user.admin
+  end
+
+  def require_admin_rights
+    unless admin_rights
+      redirect_lo_login 'Please login with admin user'
     end
   end
 
-  def redirect_lo_login
-    redirect_to login_url(:requested_url => request.fullpath), notice: 'Please login to view requested content'
+  def redirect_lo_login(msg = 'Please login to view requested content')
+    redirect_to login_url(:requested_url => request.fullpath), notice: msg
   end
 end

@@ -44,6 +44,7 @@
     //center
     position: absolute;
     display: block;
+    height: auto !important;
     margin-left: 18em;
     margin-right: 18em;
     padding: 1em;
@@ -97,6 +98,7 @@
   position: absolute;
   height: 4em;
   width: 100%;
+  left: 0;
   bottom: 0;
   background-color: #99CC99;
   display: inline-block;
