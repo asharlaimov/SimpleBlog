@@ -19,7 +19,8 @@
       <li><%= link_to 'Posts', posts_path %></li>
       <% if admin_rights %>
           <li><%= link_to 'Users', users_path %></li>
-      <% end %>
+          <li><%= link_to 'Posts to Approve', posts_path(my_posts: true) if admin_rights %></li>
+    <% end %>
     </ul>
     <% if session[:user_id] %>
         <%= link_to 'My Posts', posts_path(my_posts: true) %>

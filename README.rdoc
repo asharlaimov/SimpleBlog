@@ -42,5 +42,6 @@ rake db:seed
 10. rails generate migration AddPostsCounterCacheToTags
 11. rails generate migration AddOwnerToPost
 11. rails generate migration AddBannedUserFiels
+12. rails generate migration AddApprovePostField
 
 select  post_tags.id, posts.title, tags.title from post_tags LEFT JOIN posts on post_tags.post_id == posts.id LEFT JOIN tags on post_tags.tag_id == tags.id order by posts.title
