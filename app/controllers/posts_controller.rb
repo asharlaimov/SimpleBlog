@@ -6,9 +6,20 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.filter_by_tag(params[:tag])
-    .filter_my_posts(params[:my_posts], session[:user_id])
-    .filter_approved(params[:moderate].blank?)
-    .page(params[:page]).per(5)
+
+    if params[:my_posts].present?
+      @posts = @posts.filter_my_posts(params[:my_posts], session[:user_id])
+    else
+      if params[:moderate].blank?
+        if Settings.require_approval
+          @posts = @posts.filter_approved
+        end
+      else
+        @posts = @posts.filter_approved(false)
+      end
+    end
+
+    @posts = @posts.page(params[:page]).per(5).load
   end
 
   # GET /posts/1

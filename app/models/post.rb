@@ -32,5 +32,5 @@ class Post < ActiveRecord::Base
     where(:approved => value)
   end
 
-  default_scope order('posts.created_at DESC')
+  default_scope { order(created_at: :desc) }
 end

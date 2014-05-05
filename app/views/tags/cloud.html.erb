@@ -1,7 +1,7 @@
 <h3>Tags: </h3>
 
 <div id="tag_cloud">
-  <% Tag.order(:title).all.each do |tag| %>
+  <% Tag.order(:title).load.each do |tag| %>
       <%= content_tag :a, tag.title, href: posts_path(tag: tag.id), rel: tag.posts_count if tag.posts_count > 0 %>
   <% end %>
 </div>

@@ -4,6 +4,6 @@ class Tag < ActiveRecord::Base
   has_many :posts, through: :post_tags
 
   def self.tags_title_list
-  select(:title).map(&:title)
+    select(:title).map(&:title)
   end
 end
